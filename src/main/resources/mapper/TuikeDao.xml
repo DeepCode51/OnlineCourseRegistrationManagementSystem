@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.TuikeDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.TuikeEntity" id="tuikeMap">
+        <result property="dingdanbianhao" column="dingdanbianhao"/>
+        <result property="kechengmingcheng" column="kechengmingcheng"/>
+        <result property="kechengleixing" column="kechengleixing"/>
+        <result property="jiage" column="jiage"/>
+        <result property="shuliang" column="shuliang"/>
+        <result property="zongjine" column="zongjine"/>
+        <result property="tuikeriqi" column="tuikeriqi"/>
+        <result property="tuikeshuoming" column="tuikeshuoming"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="xingming" column="xingming"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.TuikeVO" >
+		SELECT * FROM tuike  tuike         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.TuikeVO" >
+		SELECT  tuike.* FROM tuike  tuike
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.TuikeView" >
+
+		SELECT  tuike.* FROM tuike  tuike 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.TuikeView" >
+		SELECT * FROM tuike  tuike <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
